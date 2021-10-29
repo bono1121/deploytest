@@ -1,0 +1,68 @@
+﻿
+1.spring mvc + jdbc 처리 해보기 
+2.ojdbc6.jar 추가
+3.customer-context.xml : dataSource 빈 생성
+
+=>스프링 mvc+db(bookstore의 customer를 crud구현)
+=>리소스 다루는 법
+
+4.lombok 추가하기
+-lombok 사이트에서 다운로드
+-그 경로로 가서 java -jar lombok.jar 실행
+-D:\spring5_2021\sts-bundle\sts-3.9.12.RELEASE 경로선택
+-D:\spring5_2021\sts-bundle\sts-3.9.12.RELEASE 에 lombok.jar 생성됨
+-sts 실행후 lombok 디펜던시 추가
+-maven update
+-@Data, @Setter, @Getter 등.. 
+-이클립스 outline 에서 확인가능하다.
+
+5.sql문 로그 출력하기 (sql문의 ? 값을 볼 수 있고 결과도 콘솔창에 찍어 볼 수 있어요~)
+5-1)pom.xml에 디펜던시 추가 
+
+<!-- https://mvnrepository.com/artifact/org.bgee.log4jdbc-log4j2/log4jdbc-log4j2-jdbc4 -->
+<dependency>
+    <groupId>org.bgee.log4jdbc-log4j2</groupId>
+    <artifactId>log4jdbc-log4j2-jdbc4</artifactId>
+    <version>1.16</version>
+</dependency>
+
+5-2)위의 라이브러리가 잘 설정되려면 2단계 필요
+   1단계)로그 설정 파일 추가
+      -src/main/resources/log4jdbc.log4j2.properties 파일 만들어 다음 내용 추가 내용             
+      -log4jdbc.spylogdelegator.name=net.sf.log4jdbc.log.slf4j.Slf4jSpyLogDelegator
+   
+   2단계)jdbc 연결정보 수정
+     -db 설정 xml 문서로 이동 : 두줄변경
+	<beans:bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+<!-- 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />  -->
+		
+		<beans:property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />
+		<beans:property name="url" value="jdbc:log4jdbc:oracle:thin:@localhost:1521:xe" />
+		
+		<beans:property name="username" value="system" />
+		<beans:property name="password" value="admin"s />
+	</beans:bean>
+
+5-3)log4j.xml 설정
+	<!--log4j2-jdbc  -->
+	<logger name="jdbc">
+		<level value="off" />
+	</logger>	
+	<logger name="jdbc.sqlonly">
+		<level value="off" />
+	</logger>
+	<logger name="jdbc.sqltiming">
+		<level value="debugg" />
+	</logger>		
+	<logger name="jdbc.resultset">
+		<level value="off" />
+	</logger>
+	<logger name="jdbc.resultsettable">
+		<level value="debugg" />
+	</logger>
+	<logger name="jdbc.connection">
+		<level value="off" />
+	</logger>			
+	<!--log4j2-jdbc  -->	
