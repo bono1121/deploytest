@@ -155,7 +155,6 @@
 			<version>11.2.0.3</version>
 		</dependency>
 
-
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -234,7 +233,7 @@
 		<repository>
 			<id>oracle</id>
 			<name>ORACLE JDBC Repository</name>
-			<url>http://www.datanucleus.org/downloads/maven2/oracle</url>
+			<url>http://www.datanucleus.org/downloads/maven2</url>
 		</repository>
 	</repositories>
 
