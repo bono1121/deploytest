@@ -2,21 +2,17 @@
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 //@Setter
 //@Getter
-@NoArgsConstructor
-@AllArgsConstructor
+//@NoArgsConstructor
+//@AllArgsConstructor
 //@ToString
 //@EqualsAndHashCode
-@Data
+//@Data
 public class Customer {
-	
+	 
 	private int customerid;
 	private String id;
 	private String name;
@@ -26,7 +22,7 @@ public class Customer {
 	private String address2;
 	private String phone;
 	private String email;
-/*	
+	
 	public int getCustomerid() {
 		return customerid;
 	}
@@ -88,5 +84,5 @@ public class Customer {
 				+ ", postcode=" + postcode + ", address=" + address + ", address2=" + address2 + ", phone=" + phone
 				+ ", email=" + email + "]";
 	}
-*/
+
 }
