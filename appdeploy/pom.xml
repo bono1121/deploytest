@@ -234,7 +234,7 @@
 		<repository>
 			<id>oracle</id>
 			<name>ORACLE JDBC Repository</name>
-			<url>http://www.datanucleus.org/downloads/maven2/</url>
+			<url>http://www.datanucleus.org/downloads/maven2/oracle</url>
 		</repository>
 	</repositories>
 
