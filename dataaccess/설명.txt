@@ -8,7 +8,7 @@
 
 4.lombok 추가하기
 -lombok 사이트에서 다운로드
--그 경로로 가서 java -jar lombok.jar 실행
+-경로로 가서 java -jar lombok.jar 실행
 -D:\spring5_2021\sts-bundle\sts-3.9.12.RELEASE 경로선택
 -D:\spring5_2021\sts-bundle\sts-3.9.12.RELEASE 에 lombok.jar 생성됨
 -sts 실행후 lombok 디펜던시 추가
