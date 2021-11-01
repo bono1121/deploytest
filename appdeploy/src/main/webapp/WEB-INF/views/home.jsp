@@ -9,6 +9,7 @@
 	Hello world!  
 </h1>
 
-<P>  The time on the server is ${serverTime}. 바로 적용되는지 궁금해~~~~</P>
+<P>  The time on the server is ${serverTime}. 
+내용이 변경이 왜 안돼????바로 적용되는지 궁금해~~~~</P>
 </body>
 </html>
