@@ -149,12 +149,12 @@
 			<version>12.1.0.1-atlassian-hosted</version> </dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/oracle/ojdbc6 -->
-		<dependency>
+<!-- 		<dependency>
 			<groupId>oracle</groupId>
 			<artifactId>ojdbc6</artifactId>
 			<version>11.2.0.3</version>
 		</dependency>
-
+ -->
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -229,13 +229,13 @@
 	</dependencies>
 
 	<!-- ojdbc6 레파지토리 -->
-	<repositories>
+<!-- 	<repositories>
 		<repository>
 			<id>oracle</id>
 			<name>ORACLE JDBC Repository</name>
 			<url>http://www.datanucleus.org/downloads/maven2</url>
 		</repository>
-	</repositories>
+	</repositories> -->
 
 
 	<build>
